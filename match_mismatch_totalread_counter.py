@@ -9,7 +9,7 @@ import sys
 import os.path
 import csv
 
-parser = argparse.ArgumentParser(description="Compare to sync files")
+parser = argparse.ArgumentParser(description="Compare sync file to two parental files, get all match/mismatch read counts")
 parser.add_argument('--p1', help='Parental Sync File One', required=True, type=str)
 parser.add_argument('--p2', help='Parental Sync File Two', required=True, type=str)
 parser.add_argument('--f', help='Input F2 Sync File', required=True, type=str)
@@ -22,7 +22,7 @@ args = parser.parse_args()
 ### Load sync files and assign column names
 df_s1 = pd.read_csv(args.p1, sep='\t', header=None) # parent 1
 df_s2 = pd.read_csv(args.p2, sep='\t', header=None) # parent 2
-df_s3 = pd.read_csv(args.f, sep='\t', header=None) # parent 3
+df_s3 = pd.read_csv(args.f, sep='\t', header=None) # F2
 df_s1.columns = ['chr', 'pos', 'refA', 'countA']
 df_s2.columns = ['chr', 'pos', 'refA', 'countB']
 df_s3.columns = ['chr', 'pos', 'refA', 'countC']
