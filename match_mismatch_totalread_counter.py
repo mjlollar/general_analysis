@@ -15,8 +15,8 @@ parser.add_argument('--p2', help='Parental Sync File Two', required=True, type=s
 parser.add_argument('--f', help='Input F2 Sync File', required=True, type=str)
 parser.add_argument('--rc', help='Minimum read count in Parental sync files (default=12)', required=False, default=12, type=int)
 parser.add_argument('--mc', help='Minimum minor read count (default=1)', required=False, default=1, type=int)
-#parser.add_argument('--mt', help='Parental minor count minimum read count frequency to major (default=0.25[25%])', required=False, default=0.25, type=float)
-parser.add_argument('--o', help='Output File prefix (default=mismatch_check_results.csv)', required=False, default="mismatch_check_results.csv", type=str)
+parser.add_argument('--mt', help='Parental minor count minimum read count frequency to major (default=0.25[25%])', required=False, default=0.25, type=float)
+#parser.add_argument('--o', help='Output File prefix (default=mismatch_check_results.csv)', required=False, default="mismatch_check_results.csv", type=str)
 args = parser.parse_args()
 
 ### Load sync files and assign column names
