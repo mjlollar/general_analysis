@@ -5,9 +5,6 @@
 import argparse
 import numpy as np
 import pandas as pd
-import sys
-import os.path
-import csv
 
 parser = argparse.ArgumentParser(description="Compare to sync files")
 parser.add_argument('--s', help='Sync File', required=True, type=str)
