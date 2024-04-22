@@ -1,5 +1,4 @@
 #Average Depth of sync file
-#expected output, one text file with a single chrom,match,mismatch row
 #MJL 04/22/24
 
 import argparse
