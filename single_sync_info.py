@@ -61,7 +61,7 @@ def major_minor(row, set_num):
 	else:
 		singleton = 0
 
-	if (counts[int(count_index[2])] > args.mc) and (counts[int(count_index[2])] <= (float(counts[int(count_index[3])])* args.mt)):
+	if (counts[int(count_index[2])] > args.mc) and (counts[int(count_index[2])] < (float(counts[int(count_index[3])])* args.mt)):
 		minorfail = 1
 	else:
 		minorfail = 0
