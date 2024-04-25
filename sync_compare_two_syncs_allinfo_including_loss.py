@@ -1,4 +1,9 @@
 #Comparing two sync files for %match/mismatch
+
+## This version of sync comparison outputs additional detailed descriptions of 
+## Major/Minor dynamics between sync files,
+## like loss of minor allele in syncs, etc...
+
 #MJL 03/20/24
 
 import argparse
