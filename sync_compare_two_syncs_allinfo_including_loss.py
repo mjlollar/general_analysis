@@ -11,6 +11,7 @@ import datetime
 import numpy as np
 import pandas as pd
 import sys
+
 today = datetime.date.today()
 parser = argparse.ArgumentParser(description="Compare to sync files")
 parser.add_argument('--a', help='Sync File One', required=True, type=str)
@@ -111,7 +112,7 @@ def allele_match(row):
 		else:
 			sys.exit("Loop error code 4, exiting...")
 	
-	elif A1 != A2: # Major alleles mismatch (Checks just major first in the code)
+	elif A1 != A2: # Major alleles mismatch
 		set_1 = [A1, a1]
 		set_2 = [A2, a2]
 		#remove N if present
@@ -124,7 +125,7 @@ def allele_match(row):
 		except ValueError:
 			pass
 
-		if not set(set_1).isdisjoint(set_2): #if there is an allele overlap (Now checks )
+		if not set(set_1).isdisjoint(set_2): #if there is an allele overlap
 			status1 = "MAMI"
 			if (len(set_1) == 2) and (len(set_2) == 2): #both minor alleles present
 				if a1 == a2: #share minor alleles				
