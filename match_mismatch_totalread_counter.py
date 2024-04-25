@@ -112,17 +112,19 @@ mismatch_total = df_2['MM'].sum()
 
 chrom_dict = {'3':'2L','4':'X','5':'3L','7':'2R', '8':'3R'}
 out_ind = args.f.split('.')[1]
+out_p1 = args.p1.split('.')[1]
+out_p2 = args.p2.split('.')[1]
 chrom_index = args.f.split('.')[0]
 out_chrom = chrom_dict.get(str(chrom_index))
 
 outname = "mismatch_check_results.csv" #Match initited file
 exist_check = os.path.isfile(outname)
 with open (outname, 'a') as outfile:
-	topline = ['ind','chrom','match','mismatch']
+	topline = ['p1','p2','ind','chrom','match','mismatch']
 	writer = csv.DictWriter(outfile, delimiter=',', lineterminator='\n',fieldnames=topline)
 	if not exist_check:
 		writer.writeheader()
-	writer.writerow({'ind':str(out_ind),'chrom':str(out_chrom),'match':str(match_total), 'mismatch':str(mismatch_total)})
+	writer.writerow({'p1':str(out_p1), 'p2':str(out_p2), 'ind':str(out_ind),'chrom':str(out_chrom),'match':str(match_total), 'mismatch':str(mismatch_total)})
 
 #optional print final df that lists M and MM columns by site (sanity check purposes)
 #df_2.to_csv('test.csv', sep=',', index=False, header=False)
