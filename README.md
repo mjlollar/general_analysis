@@ -1,1 +1,1 @@
-NOTE: Scripts here that work with sync files tend to be memory hogs, exceedingly so if read depth settings are low. 
+NOTE: Scripts here that work with sync files tend to be memory hogs, exceedingly so if read depth settings are low. See the sync_analysis_sandbox repository for tips to run these scripts in chunked syncs to greatly lessen memory requirements.
